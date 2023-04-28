@@ -1,0 +1,10 @@
+.idea
+target
+.DS_Store
+browserstack-javaagent.iml
+**/target/
+.classpath
+.project
+.settings/
+.jfrog
+eclipse-plugin-test-1/bin
