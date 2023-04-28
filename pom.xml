@@ -7,6 +7,18 @@
     <artifactId>sdk-eclipse-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
+    <name>eclipse-plugin</name>
+    <description>Eclipse Plugin Test</description>
+    <url>https://www.browserstack.com</url>
+
+    <developers>
+        <developer>
+            <name>BrowserStack</name>
+            <email>support@browserstack.com</email>
+            <organization>BrowserStack</organization>
+            <organizationUrl>https://www.browserstack.com</organizationUrl>
+        </developer>
+    </developers>
 
     <licenses>
         <license>
@@ -61,20 +73,28 @@
         </pluginManagement>
 
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-gpg-plugin</artifactId>-->
-<!--                <version>1.6</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>sign-artifacts</id>-->
-<!--                        <phase>verify</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>sign</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-gpg-plugin</artifactId>
+                <version>${tycho.version}</version>
+<!--                <configuration>-->
+<!--                    <skipIfJarsigned>true</skipIfJarsigned>-->
+<!--                </configuration>-->
+            </plugin>
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>tycho-maven-plugin</artifactId>
@@ -139,7 +159,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.13</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
@@ -149,4 +169,10 @@
             </plugin>
         </plugins>
     </build>
+
+    <scm>
+        <url>https://github.com/karanshah-browserstack/eclipse-plugin</url>
+        <connection>scm:git:git@github.com:karanshah-browserstack/eclipse-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:karanshah-browserstack/eclipse-plugin.git</developerConnection>
+    </scm>
 </project>

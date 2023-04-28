@@ -10,7 +10,22 @@
     <artifactId>sdk-eclipse-updatesite</artifactId>
     <packaging>eclipse-repository</packaging>
 
+    <properties>
+        <maven.deploy.skip>false</maven.deploy.skip>
+    </properties>
+
     <build>
         <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-gpg-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals><goal>sign-p2-artifacts</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>

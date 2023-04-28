@@ -9,7 +9,6 @@
         <version>1.0.0</version>
     </parent>
 
-    <groupId>io.github.karanshah-browserstack</groupId>
     <artifactId>sdk-eclipse-feature</artifactId>
     <packaging>eclipse-feature</packaging>
 
